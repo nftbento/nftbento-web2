@@ -1,0 +1,80 @@
+{
+    "extends": ["react-app"],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": "false",
+        "babelOptions": {
+            "presets": [
+                "@babel/preset-react"
+            ]
+        }
+    },
+    "plugins": ["prettier","simple-import-sort"],
+    "rules": {
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "import",
+                "next": "export"
+            },
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": "class"
+            },
+            {
+                "blankLine": "always",
+                "prev": "import",
+                "next": "const"
+            },
+            {
+                "blankLine": "always",
+                "prev": "import",
+                "next": "function"
+            },
+            {
+                "blankLine": "always",
+                "prev": "block-like",
+                "next": "export"
+            },
+            {
+                "blankLine": "always",
+                "prev": "block-like",
+                "next": "const"
+            },
+            {
+                "blankLine": "always",
+                "prev": "class",
+                "next": "const"
+            },
+            {
+                "blankLine": "always",
+                "prev": "export",
+                "next": "const"
+            },
+            {
+                "blankLine": "always",
+                "prev": "function",
+                "next": "function"
+            },
+            {
+                "blankLine": "always",
+                "prev": "export",
+                "next": "function"
+            },
+            {
+                "blankLine": "always",
+                "prev": "multiline-expression",
+                "next": "multiline-expression"
+            },
+            {
+                "blankLine": "never",
+                "prev": "if",
+                "next": "const"
+            }
+        ],
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
+    }
+}
