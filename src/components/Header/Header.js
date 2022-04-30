@@ -64,6 +64,7 @@ export const Header = () => (
 			<StyledSecondaryNav>
 				<StyledLink to="/">Dashboard</StyledLink>
 				<StyledLink to="/about">About</StyledLink>
+				<StyledLink to="/summary">Summary</StyledLink>
 			</StyledSecondaryNav>
 			<SocialMediaIcons>
 				<StyledIcon icon={faTwitter} iconcolor={"#0088cc"} />
