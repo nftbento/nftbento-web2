@@ -23,8 +23,25 @@ export const NFTTable = ({ tableData }) => {
     console.log(JSON.stringify(tableData.columns));
 
     return (
-        <div>
-            <Table hoverable={true} striped={true}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Table hoverable={true} striped={true}
+                style={{
+                    borderStyle: 'solid',
+                    borderColor: 'blue',
+                    borderWidth: '2px',
+                    borderRadius: '10px',
+                    backgroundColor: '#ffffff',
+                    padding: '12px',
+                    marginTop: '6px',
+                    marginBottom: '6px'
+                }}>
+                <thead>
+                    <tr>
+                        {colNames.map((item, index) => {
+                            return <th key={index}>{renderHTML(item)}</th>
+                        })}
+                    </tr>
+                </thead>
                 <tbody>
                     {rows.map((row, index) => {
                         return <tr key={index}>
@@ -34,13 +51,6 @@ export const NFTTable = ({ tableData }) => {
                         </tr>
                     })}
                 </tbody>
-                <thead>
-                    <tr>
-                        {colNames.map((item, index) => {
-                            return <th key={index}><font color="white">{renderHTML(item)}</font></th>
-                        })}
-                    </tr>
-                </thead>
             </Table>
         </div>
     )

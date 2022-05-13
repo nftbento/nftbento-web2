@@ -8,8 +8,8 @@ export const Header = ({ title }) => {
     }
 
     return (
-        <div className='container'>
-            <h1 style={headingStyle}>{title}</h1>
+        <div className='header-container'>
+            <h1 style={headingStyle}><font color="white">{title}</font></h1>
             <h4 style={descriptionStyle}>The hottest NFT collections on OpenSea right now</h4>
             <h5 style={detailInfoStyle}>Data loaded &lt; 1 min ago</h5>
         </div>

@@ -1,12 +1,12 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../Stylesheets/Carousel.scss";
 
-import React, {useEffect, useState} from "react";
-import {Carousel} from "react-responsive-carousel";
+import React, { useEffect, useState } from "react";
+import { Carousel } from "react-responsive-carousel";
 import styled from "styled-components";
 
-import {picksOnScreen, screenSize} from "../../StyledComponents/Constants";
-import {CollectionCard} from ".";
+import { picksOnScreen, screenSize } from "../../StyledComponents/Constants";
+import { CollectionCard } from ".";
 
 const StyledDiv = styled.div`
 	display: flex;
@@ -20,7 +20,7 @@ const CollectionSet = styled.div`
 	justify-content: space-around;
 `;
 
-export const TradingPicks = ({collections}) => {
+export const TradingPicks = ({ collections }) => {
 	const [collectionsSet, setCollectionsSet] = useState([]);
 	const totalCollection = 12;
 
@@ -50,7 +50,7 @@ export const TradingPicks = ({collections}) => {
 		handleResize();
 
 		return () => window.removeEventListener("resize", handleResize);
-	}, [collections, screenSize.large, screenSize.medium]);
+	}, [collections]);
 
 	return (
 		<StyledDiv>

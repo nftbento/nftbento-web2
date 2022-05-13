@@ -32,17 +32,17 @@ export const Summary = () => {
           tableRow.push(i + 1);
 
           names.push(collection.name);
-          tableRow.push(<font color="white">{collection.name}</font>);
+          tableRow.push(collection.name);
 
           tableRow.push(<img src={collection.image_url} alt={collection.name} />);
 
           let parsedCollectionCount = parseInt(collection.count);
-          saleCounts.push(<font color="white">{parsedCollectionCount}</font>);
-          tableRow.push(<font color="white">{parsedCollectionCount}</font>);
+          saleCounts.push(parsedCollectionCount);
+          tableRow.push(parsedCollectionCount);
 
           let parsedTotalSales = parseInt(collection.total_sales_in_gwei);
           totalSalesInGwei.push(parsedTotalSales);
-          tableRow.push(<font color="white">{parsedTotalSales / (10 ** 9)}</font>);
+          tableRow.push(parsedTotalSales / (10 ** 9));
 
           imageUrls.push(collection.image_url);
           collectionCreationDates.push(collection.created_date);
@@ -82,15 +82,12 @@ export const Summary = () => {
   }, [])
 
   return (
-    <div className='container'>
+    <div className='summary-container' style={{
+      padding: '0 15%'
+    }}>
       <Header title='NFT Bento' />
-      <div>
-        {chartData ? <BarChart chartData={chartData} /> : null}
-
-      </div>
-      <div>
-        {tableData ? <NFTTable tableData={tableData} /> : null}
-      </div>
+      {chartData ? <BarChart chartData={chartData} /> : null}
+      {tableData ? <NFTTable tableData={tableData} /> : null}
     </div>
   )
 }
